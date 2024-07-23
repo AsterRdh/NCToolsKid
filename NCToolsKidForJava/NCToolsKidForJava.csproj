@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -151,6 +151,12 @@
     <Compile Include="Forms\SqlForm.Designer.cs">
       <DependentUpon>SqlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SqlFunctionBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SqlFunctionBuilderForm.Designer.cs">
+      <DependentUpon>SqlFunctionBuilderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VOBuilderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SqlForm.resx">
       <DependentUpon>SqlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SqlFunctionBuilderForm.resx">
+      <DependentUpon>SqlFunctionBuilderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VOBuilderForm.resx">
       <DependentUpon>VOBuilderForm.cs</DependentUpon>

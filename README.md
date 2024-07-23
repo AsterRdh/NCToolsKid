@@ -806,6 +806,49 @@ public class BudgetBookValueFromEnum extends MDEnum{
 
 ### 8. SQL整理
 
-
+### 9. SQL方法生成器
+将SQL字符串转换为一个静态方法  
+示例：  
+sql文本如下
+```sql
+--获取未被流引用的薪酬填报单数量
+--getNotUsedSalaryBillsCount
+select count(1)
+from CERI_SALARYBILL_H bill
+where not exists(
+    select 1
+    from CERI_SALARYFLOW_B flow_b
+    where flow_b.PK_BILL=bill.PK_SALARYBILL_H --薪酬填报单主表
+)
+  and bill.PK_SALARY_FLOW='$flow String 薪酬流主键$';
+```
+第一行注释为对于sql的中文介绍
+第二行注释为要生成的方法名称   
+需要传入变量的地方用`$`符号标注出来，格式为 `名称 类型 中文介绍`
+生成的代码如下
+```java
+/**
+ * 获取未被流引用的薪酬填报单数量
+ * @param flow 薪酬流主键
+ * @return <p>select count(1)</p>
+ *         <p>from CERI_SALARYBILL_H bill</p>
+ *         <p>where not exists(</p>
+ *         <p>&#8194;&#8194;select 1</p>
+ *         <p>&#8194;&#8194;from CERI_SALARYFLOW_B flow_b</p>
+ *         <p>&#8194;&#8194;where flow_b.PK_BILL=bill.PK_SALARYBILL_H </p>
+ *         <p>)</p>
+ *         <p>&#8194;and bill.PK_SALARY_FLOW='{@code flow}';</p>
+ **/
+public static String getNotUsedSalaryBillsCount(String flow){
+	return "select count(1)" + 
+		"from CERI_SALARYBILL_H bill" + 
+		"where not exists(" + 
+		"    select 1" + 
+		"    from CERI_SALARYFLOW_B flow_b" + 
+		"    where flow_b.PK_BILL=bill.PK_SALARYBILL_H " + //薪酬填报单主表
+		")" + 
+		"  and bill.PK_SALARY_FLOW='" + flow + "';";
+}
+```
 
 

@@ -43,6 +43,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button12);
             this.flowLayoutPanel1.Controls.Add(this.button13);
             this.flowLayoutPanel1.Controls.Add(this.button14);
+            this.flowLayoutPanel1.Controls.Add(this.button15);
             this.flowLayoutPanel1.Controls.Add(this.button9);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -194,7 +196,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(246, 84);
+            this.button9.Location = new System.Drawing.Point(327, 84);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 75);
             this.button9.TabIndex = 8;
@@ -210,6 +212,16 @@
             this.button11.Text = "设置";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(246, 84);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 75);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "SQL方法生成器";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // Form1
             // 
@@ -242,6 +254,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }
 
